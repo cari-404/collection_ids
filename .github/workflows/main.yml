@@ -1,0 +1,24 @@
+name: Jalankan Kode Python
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repositori
+      uses: actions/checkout@v3
+
+    - name: Setup Python
+      run: sudo apt install python pip
+
+    - name: Set Variabel Lingkungan
+      run: |
+        echo "START_COLLECTION_ID=12905192072" >> $GITHUB_ENV
+        echo "END_COLLECTION_ID=12905192100" >> $GITHUB_ENV
+        echo "VOUCHER_CODE=DC10010RB1109" >> $GITHUB_ENV
+        echo "COOKIE_IDX=1" >> $GITHUB_ENV
+
+    - name: Jalankan kode Python
+      run: python a.py  # Gantilah dengan nama file Python yang ingin Anda jalankan.
