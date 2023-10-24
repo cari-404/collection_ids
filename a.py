@@ -30,7 +30,7 @@ for i, cookie_file in enumerate(account_cookies, 1):
     print(f"{i}. {cookie_file}")
 
 # Meminta pengguna untuk memilih file cookie
-selected_cookie_index = int(input("Pilih nomor file cookie yang ingin digunakan: ")) - 1
+selected_cookie_index = int(os.environ.get("COOKIE_IDX"))
 
 if selected_cookie_index < 0 or selected_cookie_index >= len(account_cookies):
     print("Nomor file cookie yang dipilih tidak valid.")
@@ -50,15 +50,15 @@ except FileNotFoundError:
 
 # Meminta masukan collection_id awal dan akhir dari pengguna
 print("Contoh input: Awal: 12905192072, Akhir: 12905192100")
-start_collection_id = int(input("Masukkan collection_id awal: "))
-end_collection_id = int(input("Masukkan collection_id akhir: "))
+start_collection_id = int(os.environ.get("START_COLLECTION_ID"))
+end_collection_id = int(os.environ.get("END_COLLECTION_ID"))
 
 # Membuat daftar collection_id berdasarkan rentang yang dimasukkan oleh pengguna
 collection_ids = list(range(start_collection_id, end_collection_id + 1, 128))
 
 # Meminta masukan voucher_code dari pengguna
 print("Contoh input DC10010RB1109")
-voucher_code = input("Masukkan voucher_code: ")
+voucher_code = os.environ.get("VOUCHER_CODE")
 
 # Fungsi untuk mengirim permintaan POST untuk sekelompok collection_id
 async def send_batch_post_request(batch_collection_ids):
