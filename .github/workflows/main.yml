@@ -12,7 +12,10 @@ jobs:
 
     - name: Setup Python
       run: sudo apt install python-is-python3 pip
-
+      
+    - name: Instal dependensi
+      run: pip install -r requirements.txt 
+      
     - name: Set Variabel Lingkungan
       run: |
         echo "START_COLLECTION_ID=12905192072" >> $GITHUB_ENV
