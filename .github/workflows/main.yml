@@ -11,13 +11,13 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Setup Python
-      run: sudo apt install python pip
+      run: sudo apt install python-is-python3 pip
 
     - name: Set Variabel Lingkungan
       run: |
         echo "START_COLLECTION_ID=12905192072" >> $GITHUB_ENV
-        echo "END_COLLECTION_ID=12905192100" >> $GITHUB_ENV
-        echo "VOUCHER_CODE=DC10010RB1109" >> $GITHUB_ENV
+        echo "END_COLLECTION_ID=12909000000" >> $GITHUB_ENV
+        echo "VOUCHER_CODE=CB11111RB25101" >> $GITHUB_ENV
         echo "COOKIE_IDX=1" >> $GITHUB_ENV
 
     - name: Jalankan kode Python
