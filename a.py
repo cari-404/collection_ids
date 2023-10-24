@@ -30,7 +30,7 @@ for i, cookie_file in enumerate(account_cookies, 1):
     print(f"{i}. {cookie_file}")
 
 # Meminta pengguna untuk memilih file cookie
-selected_cookie_index = int(os.environ.get("COOKIE_IDX"))
+selected_cookie_index = int(os.environ.get("COOKIE_IDX")) - 1
 
 if selected_cookie_index < 0 or selected_cookie_index >= len(account_cookies):
     print("Nomor file cookie yang dipilih tidak valid.")
